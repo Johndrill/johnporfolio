@@ -1,0 +1,789 @@
+
+:root{
+    --bg: #2f5c5e;
+    --bg2: #302424;
+    --text: #d18f8f;
+    --section: #7487f0;
+}
+
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+   scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.loader{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: opacity 0.75s, visibility 0.75s;
+}
+.loader-hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: repeat(1, 100dvh) 1fr;
+    background: var(--bg);
+}
+
+#myBtn{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    font-size: 40px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.container .navbar{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    height: 50px;
+    background: var(--bg);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    padding-top: 10px;
+}
+.container .navbar .menu{
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.container .navbar .myname{
+    place-self: center;
+    color: white;
+    margin-top: 10px;
+}
+.container .navbar .links{
+    display: grid;
+    grid-template-columns: 60px 100px 100px 120px;
+    place-items: center;
+    grid-column-end: none;
+    color: white;
+    margin-top: 10px;
+}
+
+
+.container .navbar .links div a::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: yellow;
+    transform: scale(0, 1);
+    transition: transform 200ms ease-in;
+}
+.container .navbar .links div a:hover::after{
+    transform: scale(1, 1);
+}
+
+ .container .navbar .dropdown{
+    overflow: hidden;
+}
+
+
+.home{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--bg2);
+    
+}
+.hero-text{
+    color: white;
+    place-self: center;
+    margin-top: 100px;
+    text-align: center;
+}
+.hero-text i{
+    font-size: 30px;
+    margin-left: 10px;
+}
+.hero-text div{
+    color: var(--text);
+}
+
+.hero-picture{
+    place-self: center;
+}
+.hero-picture img{
+    height: 500px;
+    border-radius: 10%;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #f39c12; /* A bright color for visibility */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #e67e22; /* Slightly darker shade on hover */
+  }
+
+.container .about{
+    height: 100%;
+    background: var(--bg);
+    text-align: -webkit-center;
+    
+}
+.container .about h1{
+    margin: 0;
+    color: var(--section);
+    font-weight: 100;
+    text-align: center;
+    padding-top: 10px;
+}
+.container .about div{
+    height: 200px;
+    width: 500px;
+    color: var(--text);
+    text-align: center;
+    box-shadow: 1px 1px 5px 5px #00000066;
+    padding: 0 5px 0 5px;
+}
+.container .about div p{
+    padding-top: 40px;
+}
+.container .about .education{
+    height: 350px;
+    margin-bottom: 15px;
+}
+.container .about .education h3{
+   padding-top: 10px;
+}
+
+.container .about .education img{
+    height: 250px;
+    filter: grayscale(100%);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+}
+ .container .about .education img:hover{
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    height: 250px;
+}
+.container .about .church{
+    height: 350px;
+      
+}
+.container .about .church img{
+    height: 250px;
+    filter: grayscale(100%);
+    cursor: pointer;
+    position: relative;
+    top: 50px;
+    transition: all 0.4s ease-in-out;
+}
+.container .about .church img:hover{
+    height: 350px;
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    height: 250px;
+}
+
+.box1{
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.box2{
+    height: 400px;
+    width: 100%;
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.projects{
+    height: 100%;
+    background: var(--bg2);
+  
+}
+.projects h1{
+    margin: 0;
+    color: var(--section);
+    font-weight: 100;
+    text-align: center;
+    padding-top: 10px;
+}
+.projects .first-pro{
+    height: 270px;
+    background: var(--bg);
+    margin: 10px 160px 20px 100px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    justify-items: center;
+}
+.projects .first-pro div{
+    text-align: center;
+}
+.projects .first-pro div h2{
+    font-size: 15px;
+    color: white;
+}
+
+.projects .first-pro div i {
+    text-align: center;
+    font-size: 40px;
+
+}
+.projects .first-pro img{
+    height: 500px;
+    border-radius: 20px;
+    width: 650px;
+}
+.projects .first-pro div h3{
+    color: white;
+    text-align-last: center;
+}
+.projects .first-pro div p{
+    color: var(--text);
+    font-size: 17px;
+    text-align: center;
+    height: 100px;
+    margin: 0 100px;
+}
+.projects .first-pro div h4{
+    text-align: center;
+}
+.projects .second-pro{
+    height: 270px;
+    background: var(--bg);
+    margin: 10px 160px 20px 100px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    justify-items: center;
+}
+.projects .second-pro div{
+    text-align: center;
+
+}
+.projects .second-pro div h2{
+    font-size: 15px;
+    color: white;
+
+}
+
+.projects .second-pro div p {
+    color: var(--text);
+     font-size: 17px; 
+    
+ }
+ .projects .second-pro div i {
+    font-size: 40px;
+
+     
+  }
+.projects .second-pro img{
+    height: 500px;
+    border-radius: 20px;
+    width: 650px;
+}
+.projects .second-pro h3{
+    color: white;
+    text-align-last: center;
+}
+
+.projects .third-pro{
+     height: 270px;
+    background: var(--bg);
+    margin: 10px 160px 20px 100px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    justify-items: center;
+
+}
+.projects .third-pro div{
+    text-align: center;
+
+}
+.projects .third-pro div p {
+    color: var(--text);
+     font-size: 17px; 
+    
+ }
+ .projects .third-pro div i {
+    font-size: 40px;
+
+     
+  }
+.projects .third-pro h3 {
+    font-size: 17px;
+    text-align: center;
+    color: white;
+}
+.projects .third-pro img{
+  height: 500px;
+border-radius: 20px;
+justify-self: center;  
+}
+
+
+.container .contact div{
+    background: var(--bg2);
+    height: 200px;
+}
+.contact div h1{
+   margin: 0;
+    color: var(--section);
+    font-weight: 100;
+    text-align: center;
+    padding-top: 50px;
+}
+.contact div .two-con{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 50px;
+    justify-items: center;
+    color: var(--text);
+    font-size: 17px;
+ }
+ .contact div .location{
+    height: 50px;
+    text-align: center;
+    color: var(--text);
+    font-size: 17px;
+ }
+
+ /* @media (max-width: 1024px){
+    .container{
+        width: 320%;
+    }
+ } */
+
+/* @media (max-width: 1535px) and (min-width: 995px){
+    .container .about {
+        height: 100dvh;
+        background: var(--bg);
+        text-align: -webkit-center;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .container .about h1 {
+        margin: 0;
+        color: var(--section);
+        font-weight: 100;
+        text-align: center;
+        padding-top: 50px;
+        grid-area: 1;
+    }
+    .container .about div {
+        height: 200px;
+        width: 500px;
+        color: var(--text);
+        text-align: center;
+        box-shadow: 1px 1px 5px 5px #00000066;
+        margin-top: 50px;
+        font-size: 17px;
+    }
+    .container .about .education {
+        height: 400px;
+        width: 400px;
+        margin-left: 30px;
+    }
+    .container .about .education img {
+        height: 250px;
+    }
+    .container .about .church {
+        height: 350px;
+       
+    }
+} */
+
+@media (max-width: 1440px) and (min-width: 1200px){
+    
+}
+
+@media (max-width: 1200px) and (min-width: 993px){
+    
+}
+
+  /* tablet/mobile large */
+  @media (max-width: 992px){
+    
+    .container .navbar{
+       height: 100px;
+    }
+    .container .navbar .links{
+        display: none;
+        position: fixed;
+    }
+    .container .navbar .menu{
+        display: block;
+        justify-self: end;
+        align-self: center;
+        margin-right: 20px;
+        font-size: 60px;
+    }
+    .container .navbar .dropdown.open {
+        height: 300px;
+       
+    }
+    .container .navbar .dropdown.open div{
+        margin-bottom: 20px;
+       
+    }
+    .container .navbar .dropdown{
+        display: block;
+        position: fixed;
+        left: 130px;
+        top: 50px;
+        border-radius: 10px;
+        font-size: 30px;
+    }
+    .about {
+        height: 300dvh;
+        background: var(--bg);
+        text-align: -webkit-center;
+    }
+    .projects {
+        height: 330vh;
+        background: var(--bg2);
+    }
+  }
+
+  /* mobile */
+
+ @media (max-width: 620px){
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        font-size: 35px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .container .navbar{
+        height: auto;
+       
+    }
+    .container .navbar .menu {
+    font-size: 40px;
+    }
+ 
+    .container .navbar .dropdown div{
+        margin-bottom: 40px;
+        padding-left: 30px;
+    }
+    .container .navbar .dropdown {
+        position: fixed;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+        font-size: 30px;
+        padding: 0;
+        height: 100%;
+        background: var(--bg);
+        width: 0;
+        overflow-x: hidden;
+        transition: 0.2s;
+        z-index: 1;
+    }
+
+    .container .navbar .dropdown .close{
+        display: grid;
+        grid-template-columns: 200px 1fr;
+    }
+    .container .navbar .dropdown .close h1{
+       font-weight: 100;
+        color: white;
+        visibility: hidden;
+    }
+    .container .navbar .dropdown .close i{
+       align-self: center;
+    font-size: 50px;
+    width: 400px;
+    color: white;
+    position: absolute;
+    left: 80%;
+    }
+    
+    .container  .navbar .links div,a::after{
+        display: none;
+     }
+     .container .navbar .myname {
+        place-self: center;
+        color: white;
+        margin-top: 10px;
+        font-size: 22px;
+    }
+
+
+    .container {
+        display: grid;
+        background: var(--bg);
+        height: auto;
+        width: auto;
+    }
+    .container .home {
+
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+        height: auto;
+        width: auto;
+    }
+    .box2 {
+        height: 25rem;
+        width: auto;  
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    .container .home .hero-text:nth-child(1){
+        grid-row: 2/3;
+
+    }
+    .container .home .hero-picture:nth-child(2){
+        grid-row: 1/1;
+        pad
+    }
+    .container .home .hero-picture img{
+        height: auto;
+        position: relative;
+        top: 5em;
+        left: 8em;
+        max-width: 40%;
+       
+    }
+    .container .home .hero-text{
+        font-size: 15px;
+        margin-top: 0px;
+    }
+    .container .hero-text i {
+        font-size: 40px;
+    }
+   
+    .container .home .hero-text div{
+        text-align: center;
+        width: auto;
+    }
+    .container .home .hero-text h1{ 
+        text-align: center;
+        width: auto;
+    }
+    .container .home .hero-text h2{ 
+        width: auto;
+    }
+
+    .container .about {
+        height: auto;
+    }
+    .container .about h1 {
+        font-size: 30px;
+    }
+    .container .about div {
+        height: 40%;
+        font-size: 25px;
+        width: 80%;
+    }
+
+    .container .about div p{
+        font-size: 20px;
+    }
+    .container .about .education {
+        height: auto;
+    }
+    .container .about .education h3 {
+        font-size: 20px;
+    }
+    .container .about .education img {
+        height: auto;
+        max-width: 100%;
+        filter: grayscale(100%);
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        display: inline-block;
+    }
+    .container .about .education img:hover{
+        filter: grayscale(0%);
+        transform: scale(1.1);
+        height: auto;
+    }
+  
+
+    /* .container .projects {
+        height: 100%;
+        background: var(--bg2);
+    }
+    .container .projects h1 {
+        font-size: 30px;
+    }
+    .container .projects .first-pro {
+        height: 500px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+        margin: 50px 10px 50px 10px;
+    }
+    .container .projects .first-pro div{
+        text-align: center;
+    
+    }
+    .container .projects .first-pro img {
+        height: 100%;
+        width: 100%;
+    
+    }
+    .container .projects .first-pro div h3 {
+        color: white;
+        text-align-last: center;
+        font-size: 20px;
+    }
+    .container .projects .first-pro div i {
+        text-align: center;
+        font-size: 40px;
+    }
+    .container .projects .first-pro div p {
+        font-size: 20px;
+        height: 100px;
+        
+    }
+    .container .projects .second-pro {
+        height: 520px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+        margin: 50px 10px 50px 10px;
+       
+    }
+    .container .projects .second-pro div {
+       text-align: center;
+        
+     }
+     .container .projects .second-pro div i {
+        font-size: 40px;
+         
+      }
+    .container .projects .second-pro div p {
+       color: var(--text);
+        font-size: 20px; 
+       
+    }
+    
+    .container .projects .second-pro h3 {  
+        font-size: 20px;
+    }
+    .container .projects .second-pro img {
+        height: 300px;
+        width: 100%;
+        align-self: center;
+    }
+    .container .projects .third-pro {
+        height: 590px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+        margin: 50px 10px 50px 10px;
+
+    }
+    .container .projects .third-pro img {
+        height: 300px;
+        align-self: center;
+    }
+    .container .projects .third-pro div  {
+        text-align: center;
+    }
+    .container .projects .third-pro div  i{
+        font-size: 40px;
+    }
+    .container .projects .third-pro div h3 {
+        font-size: 20px;
+     text-align: center;
+     color: white;
+    }
+    .container .projects .third-pro div p {
+        color: var(--text);
+    font-size: 20px;
+    }
+     */
+
+    .container .contact div h1 {
+        font-size: 30px;
+    }
+    .contact div .two-con {
+        font-size: 25px;
+        height: 170px;
+        grid-template-columns: none;
+
+    }
+    .contact div .two-con p{
+        display: flex;
+        font-family: monospace;
+        margin: 0;
+    }
+    .contact div .location {
+        font-size: 25px;
+       
+    }
+    .contact div .location p{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    }
+
+    .contact div i {
+        font-size: 25px;
+        display: flex;
+    }
+    .contact div .two-con .flex {
+        display: flex;
+        height: 0;
+    }
+    .contact div .two-con .flex i{
+        font-size: 90px;
+        margin-left: 40px;
+        color: var(--bg2);
+    }
+ }
